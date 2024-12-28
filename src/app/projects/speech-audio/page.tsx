@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -195,7 +194,7 @@ const Projects = () => {
             alt="image"
           />
         </div>
-      <p className="font-[20px] font-light mb-2 mt-12"> After performing these three data augmentations on the original data, there are a total of 4 different versions of audio measurement data for each audio file present in the dataset, making a total of 7680 observations. This dataset with the original data in addition to 3 augmented versions, is the final training dataset from which features will be extracted to convert audio files to numerical representations for model input. Next, the following features are extracted from the total dataset: zero crossing rate, chroma short-time fourier transform, mel-frequency ceptral coefficients, root mean square value, and mel spectogram. Each feature plays a different role in the speech audio analysis, outlined in the report, and enhances the model's ability to understand and classify audio data into emotions in ways aligned with auditory perception. The resulting dataset of features is shown below.  </p>
+      <p className="font-[20px] font-light mb-2 mt-12"> After performing these three data augmentations on the original data, there are a total of 4 different versions of audio measurement data for each audio file present in the dataset, making a total of 7680 observations. This dataset with the original data in addition to 3 augmented versions, is the final training dataset from which features will be extracted to convert audio files to numerical representations for model input. Next, the following features are extracted from the total dataset: zero crossing rate, chroma short-time fourier transform, mel-frequency ceptral coefficients, root mean square value, and mel spectogram. Each feature plays a different role in the speech audio analysis, outlined in the report, and enhances the model&apos;s ability to understand and classify audio data into emotions in ways aligned with auditory perception. The resulting dataset of features is shown below.  </p>
       <div className="relative w-full">       
           <Image
             className="w-full h-auto rounded-lg shadow-lg"
@@ -205,7 +204,7 @@ const Projects = () => {
             alt="image"
           />
         </div>
-      <p className="font-[20px] font-light mb-2 mt-12"> Next the data is split into training and test sets of 80% and 20% of the original training data, respectively. After splitting the data, the features must be normalized to prevent the model from valuing certain features over others during the learning process due to their larger scale. Using sklearn's standard scaler, all features are scaled to a mean of 0 and standard decation of 1. The data is resized by adding a dimension to make the data compatible for CNN modeling, facilitate better performance, and avoid errors during training.  </p>
+      <p className="font-[20px] font-light mb-2 mt-12"> Next the data is split into training and test sets of 80% and 20% of the original training data, respectively. After splitting the data, the features must be normalized to prevent the model from valuing certain features over others during the learning process due to their larger scale. Using sklearn&apos;s standard scaler, all features are scaled to a mean of 0 and standard decation of 1. The data is resized by adding a dimension to make the data compatible for CNN modeling, facilitate better performance, and avoid errors during training.  </p>
       <p className="font-[20px] font-light mb-2 mt-12"> The first model fit to the data is a CNN with a 1 dimensional convolutional layer with 128 filters of size 5. After the convolutional layer, the Rectified Linear Unit (ReLU) activation function is added to the model, introducing non-linearity and helping the model to learn complex patterns. Next, a dropout layer is added with a dropout rate of 0.2, which helps to prevent overfitting by dropping a random sample of the input data during training. A flatten layer then flattens the data into a 1-dimensional vector, preparing the data to be inputted to a fully connected dense layer with 8 units for each prediction class. The dense layer helps the model learn high-level features and has a softmax activation function which converts the output into probabilities, making it suitable for multi-class classification problems such as this one. The model is compiled with the Adam optimizer and categorical cross-entropy loss, which is suitable for multi-class classification. This model gave a test accuracy score and f1-score of 62.76%, and will act as the baseline model for this project to improve upon. The model, confusion matrix, loss and accuracy plots, and classification report are shown below.   </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -43,7 +43,7 @@ export default function WebDevelopmentPage() {
               GitHub Repository
             </Button>
           </Link>
-
+          
           <h3 className="text-[20px] font-medium">Project Overview:</h3>
           <p className="font-[20px] font-light">This project uses supervised learning methods and to predict whether small business loans will be paid off in full or charged off. Using data from the U.S. Small Business Administration (SBA), the goal of the project is to create a predictive model to provide knowledge and insight to small business owners when applying for a loan. The model will be tested on example business loans to determine the most important factors and success thresholds for small business loans. Business owners can use such a model to determine whether they will be able to pay off the loans they are requesting. As small businesses are the backbone of the American economy,  this application of machine learning is beneficial in assisting the success of these businesses.</p>
           <h3 className="text-[20px] font-medium">Steps Taken:</h3>
@@ -59,7 +59,7 @@ export default function WebDevelopmentPage() {
             <div className="relative w-full flex flex-col items-center"> 
               <p className="text-center mb-4">Correlation Matrix Heat Map</p>
               <Image
-              className="max-w-2xl h-auto rounded-lg shadow-lg"
+              className="w-auto h-auto rounded-lg shadow-lg"
               src="/image3_1.webp"
               width="400"
               height="300"
@@ -101,7 +101,7 @@ export default function WebDevelopmentPage() {
           </div>          
 
           <p className="font-[20px] font-light">However, after running the model with and without PCA, it is determined that PCA decreases the model accuracy. This may be due to the fact that there are only 8 metric variables in the training data, and many of them are individually important to the models, as seen later. Replacing them with two principal components results in information lost and worse model performance, thus the original metric variables are kept without using the principal components. </p>
-          <p className="font-[20px] font-light">The first model fit to the dataset is our naive base model. This is done by assigning the same prediction to all instances (Paid in Full, MIS_Status = 0), then evaluating the accuracy of assigning the outcomes this way. This method gives an accuracy of 76.12%, and it's confusion matrix can be seen below. Since this is the simplest method it will be our baseline accuracy score to aim to improve upon. </p>
+          <p className="font-[20px] font-light">The first model fit to the dataset is our naive base model. This is done by assigning the same prediction to all instances Paid in Full, MIS_Status = 0, then evaluating the accuracy of assigning the outcomes this way. This method gives an accuracy of 76.12%, and it&apos;s confusion matrix can be seen below. Since this is the simplest method it will be our baseline accuracy score to aim to improve upon. </p>
 
           <div className="relative w-full flex flex-col items-center"> 
               <p className="text-center mb-4">Correlation Matrix Heat Map</p>
@@ -114,7 +114,7 @@ export default function WebDevelopmentPage() {
               />
             </div>
           <p className="font-[20px] font-light">The next model attempted is a logistic regression, a commonly used model for binary classification. For this model, the odds ratio of the coefficients would allow us to see the expected change in odds that the loan is Charged Off (MIS_Status = 1) for a one-unit increase in each independent variable Xi. Our first logistic regression model was used to adjust penalty types (L1, L2) and maximum iterations which resulted in an accuracy of 76.1%. For our second model, we experimented with the best cutoff score to find the best cutoff by iterating over a range of 0.1 to 0.9. The best cutoff was found to be 0.3, which gave these performance metrics: Accuracy = 80.5%, Precision = 61.2%, Recall = 50.8%, F1 = 55.5%. This accuracy score is an improvement from the baseline model. </p>
-          <p className="font-[20px] font-light">Next, decision trees are fit to the dataset. Decision Trees were chosen due to their interpretability, providing a general set of “rules'' or decision paths for why a small business loan may be paid in full or charged off. Additionally, by listing feature importances, we would also be able to identify the most important variables for determining whether a loan is paid in full or charged off. To establish a decision tree baseline, we started with a full tree which gave an accuracy of 89.8%. This was a great starting point as its accuracy was significantly higher than our naive baseline. To account for the possibility of overfitting, a reduced tree is implemented with max_depth=10, min_samples_split = 50, min_samples_leaf = 50, and min_impurity_decrease = 0.01.The tree can be seen below. After testing it on a 5-fold cross-validation test, it resulted in an accuracy score of 84.7%. </p>
+          <p className="font-[20px] font-light">Next, decision trees are fit to the dataset. Decision Trees were chosen due to their interpretability, providing a general set of &apos;rules&apos; or decision paths for why a small business loan may be paid in full or charged off. Additionally, by listing feature importances, we would also be able to identify the most important variables for determining whether a loan is paid in full or charged off. To establish a decision tree baseline, we started with a full tree which gave an accuracy of 89.8%. This was a great starting point as its accuracy was significantly higher than our naive baseline. To account for the possibility of overfitting, a reduced tree is implemented with max_depth=10, min_samples_split = 50, min_samples_leaf = 50, and min_impurity_decrease = 0.01.The tree can be seen below. After testing it on a 5-fold cross-validation test, it resulted in an accuracy score of 84.7%. </p>
           <div className="relative w-full flex justify-center">       
             <Image
               className=" w-lg h-auto rounded-lg shadow-lg"

@@ -7,7 +7,7 @@ export default function WebDevelopmentPage() {
     <article className="container mx-auto px-20 py-10 mt-2 max-w-4xl max-auto shadow-lg">
   
       <section className="relative py-12 lg:py-24 mt-16 max-w-8xl mx-auto">
-      <div className="container ">
+      <div className="container">
         <div className="grid gap-6 lg:grid-cols-1 lg:gap-12 items-center">
           <div className="space-y-4">
             <p className="text-[14px] font-light dark:text-gray-400">
@@ -59,7 +59,7 @@ export default function WebDevelopmentPage() {
             <li className="font-[20px] font-light mb-2">2. How much money would be saved from overtime hours worked by police officers if civilian flaggers were used instead? </li>
             <li  className="font-[20px] font-light mb-2">3. Summarize results and explore potential arguments for reallocation.</li>
           </ul>
-          <p className="font-[20px] font-light">The data used is the City of Boston's Operating Budget data. To identify where there is underutilization, analysis must be done on the spending and surplus within departments. The chart below is created to identify the top departments from which an argument could be made for a reallocation of resources. Using feasibility rankings for how possible it is to argue for a reallocation, along with the departmental surplus in 2022, the most recently available year of data, the 10 departments highlighted in red will be further analyzed for departmental surplus which could be reallocated towards participatory budgeting. </p>
+          <p className="font-[20px] font-light">The data used is the City of Boston&apos;s Operating Budget data. To identify where there is underutilization, analysis must be done on the spending and surplus within departments. The chart below is created to identify the top departments from which an argument could be made for a reallocation of resources. Using feasibility rankings for how possible it is to argue for a reallocation, along with the departmental surplus in 2022, the most recently available year of data, the 10 departments highlighted in red will be further analyzed for departmental surplus which could be reallocated towards participatory budgeting. </p>
             <div className="relative w-full flex justify-center">       
             <Image
               className=" w-auto h-auto rounded-lg shadow-lg"
@@ -121,7 +121,7 @@ export default function WebDevelopmentPage() {
               alt="image"
             />
             </div>
-          <p className="font-[20px] font-light">Next, we want to explore overtime pay within specific police assignments, to see how much is being spent paying police officers overtime where civilian flaggers could be used to save money. The dashboard below shows the overtime pay analysis for detail assignments, which make up the majority of police assignments. The chart on the left displays the amount overpaid (overtime hours * overtime rate) for the past 3 years, and the chart on the right displays the amount of hours that were paid vs. worked. The City of Boston's policy for overtime police work requires police officers to be paid either 4 hours or 8 hours for overtime work regardless of the actual number of hours worked - for 0-4 hours worked overtime, officers are always paid for 4 overtime hours; for 4-8 hours worked overtime, officers are always paid for 8 overtime hours. Due to this policy there is often a discrepancy between the number of hours that are paid and worked, and the chart below highlights this.</p>
+          <p className="font-[20px] font-light">Next, we want to explore overtime pay within specific police assignments, to see how much is being spent paying police officers overtime where civilian flaggers could be used to save money. The dashboard below shows the overtime pay analysis for detail assignments, which make up the majority of police assignments. The chart on the left displays the amount overpaid overtime hours * overtime rate for the past 3 years, and the chart on the right displays the amount of hours that were paid vs. worked. The City of Boston&apos;s policy for overtime police work requires police officers to be paid either 4 hours or 8 hours for overtime work regardless of the actual number of hours worked - for 0-4 hours worked overtime, officers are always paid for 4 overtime hours; for 4-8 hours worked overtime, officers are always paid for 8 overtime hours. Due to this policy there is often a discrepancy between the number of hours that are paid and worked, and the chart below highlights this.</p>
           <div className="relative w-full flex justify-center">       
             <Image
               className=" w-auto h-auto rounded-lg shadow-lg"
@@ -132,7 +132,7 @@ export default function WebDevelopmentPage() {
             />
             </div>
           <p className="font-[20px] font-light">As seen from the dashboard above, there is around $6M being overpaid for hours not worked on average between 2020 and 2022. In 2022, there is around $7M overpaid for detail assignments. This makes up around 30% of the overspending in the entire police department as there was a negative surplus of -$24M in 2022. We also want to look at overtime hours for detail assignments, court assignments, and special events assignments. </p>
-          <p className="font-[20px] font-light">Since we only have pay data for detail assignments, looking at the hours for all assignments can provide insight into how much more is spent on the other two assignment types for which we don't have pay rates data. The dashboard below includes 4 charts: the total hours overpaid (not worked) yearly in the past 5 years, the hours overpaid yearly in the past 5 years broken down by assignment type, the total hours paid vs. worked yearly in the past 5 years, and the hours paid vs. worked yearly in the past 5 years broken down by assignment type. </p>
+          <p className="font-[20px] font-light">Since we only have pay data for detail assignments, looking at the hours for all assignments can provide insight into how much more is spent on the other two assignment types for which we don&apos;t have pay rates data. The dashboard below includes 4 charts: the total hours overpaid not worked yearly in the past 5 years, the hours overpaid yearly in the past 5 years broken down by assignment type, the total hours paid vs. worked yearly in the past 5 years, and the hours paid vs. worked yearly in the past 5 years broken down by assignment type. </p>
           <div className="relative w-full flex justify-center">       
             <Image
               className=" w-auto h-auto rounded-lg shadow-lg"
@@ -143,7 +143,7 @@ export default function WebDevelopmentPage() {
             />
             </div> 
           <p className="font-[20px] font-light">As seen from the dashboard above, for detail and court assignments there were around 190K total overpaid hours in 2022. For detail assignments specifically, there were around 149K overpaid hours. There were 37K overpaid hours for court assignments, and 4K overpaid hours for special events assignments. </p>
-          <p className="font-[20px] font-light">These charts display a large amount of overpaid hours and overtime pay within the police department. Mitigating some of this to civilian flaggers may help reduce police spending and argue for a reallocation of funds to participatory budgeting. In looking at the departments with high surplus the 9 departments selected display a $9.4M total surplus in 2022, and the police department's $7M overpaid to police officers in detail assignments can also be potentially reallocated. </p>
+          <p className="font-[20px] font-light">These charts display a large amount of overpaid hours and overtime pay within the police department. Mitigating some of this to civilian flaggers may help reduce police spending and argue for a reallocation of funds to participatory budgeting. In looking at the departments with high surplus the 9 departments selected display a $9.4M total surplus in 2022, and the police department&apos;s $7M overpaid to police officers in detail assignments can also be potentially reallocated. </p>
           <h3 className="text-[20px] font-medium">Conclusions, Limitations, and Extensions</h3>
           <p className="font-[20px] font-light">In conclusion, this project was able to conduct a thorough investigation and analysis in to the City of Boston departmental budgets and identify key departments of interest with high surplus. It was found that personnel spending is significantly higher than non-personnel spending in most departments of interest, and that there is a significant amount overpaid to police officers in the Boston Police Department. </p>
           <p className="font-[20px] font-light">Some limitations of this project include access to city data. Although this data is publicly available, it differs by year in regards to the information provided and format. Due to this it can be difficult to obtain data from past years to conduct the analysis over time, in addition to departmental budget fluctuations in each year. Additionally, without pay rates for all police assignments we are unable to identify the exact amount spent on overtime police assignments of all types. </p>
@@ -151,11 +151,11 @@ export default function WebDevelopmentPage() {
           <p className="font-[20px] font-light mb-2 mt-12">
           Thanks for reading, check out the&nbsp;  
           <Link href="https://github.com/bellad21992/City_Budget_Analysis" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">GitHub repository</span>
+            <span className="text-black underline" rel="noopener noreferrer">GitHub repository</span>
           </Link> 
           &nbsp;for this project and view the&nbsp; 
           <Link href="https://docs.google.com/presentation/d/1TPI7JSvMZHgIeZVqLq-2HSucp4QYlyel/edit" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">presentation</span>
+            <span className="text-black underline" rel="noopener noreferrer">presentation</span>
           </Link>!
         </p>
 
