@@ -1,12 +1,21 @@
-'use client'
+'use client';
 
-import { useState, useMemo } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Search } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
+import { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Search, MoreVertical, Facebook, Twitter, Linkedin, LinkIcon } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { toast, Toaster } from 'react-hot-toast';
+
 
 const projects = [
   { id: 1, title: 'Speech Audio Emotion Recognition', description: 'April 28, 2024', tags: ['Featured Projects', 'Machine Learning', 'NLP'], href: "/projects/speech-audio", image: '/image1.jpg' },
@@ -26,55 +35,86 @@ const projects = [
   { id: 15, title: 'Housing Prices in San Francisco', description: 'December 19, 2022', tags: ['Linear Regression'], href: "/projects/als-resource", image: '/image15.webp' },
   { id: 16, title: 'GDP by Region', description: 'Nov 29, 2022', tags: ['Linear Regression', 'Data Visualization'], href: "/graphics/web-development", image: '/image16.jpg' },
   { id: 17, title: 'Grocery Recommendation Engine', description: 'February 25, 2023', tags: ['Linear Regression', 'Machine Learning'], href: "/projects/als-resource", image: '/image17.jpg' },
-]
 
-const allTags = Array.from(new Set(projects.flatMap(project => project.tags)))
+];
+
+const allTags = ['All', ...Array.from(new Set(projects.flatMap(project => project.tags)))];
 
 const Projects = () => {
-  const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const [searchQuery, setSearchQuery] = useState('')
+  const [selectedTag, setSelectedTag] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
-      const matchesTags = selectedTags.length === 0 || selectedTags.some(tag => project.tags.includes(tag))
-      const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                            project.description.toLowerCase().includes(searchQuery.toLowerCase())
-      return matchesTags && matchesSearch
-    })
-  }, [selectedTags, searchQuery])
+      const matchesTag = selectedTag === 'All' || project.tags.includes(selectedTag);
+      const matchesSearch =
+        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.description.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesTag && matchesSearch;
+    });
+  }, [selectedTag, searchQuery]);
 
-  const toggleTag = (tag: string) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
-    )
-  }
+  const shareProject = (project: { id?: number; title: any; description?: string; tags?: string[]; href: any; image?: string; }, platform: string) => {
+    const url = encodeURIComponent(`${window.location.origin}${project.href}`);
+    const text = encodeURIComponent(`Check out this project: ${project.title}`);
+    let shareUrl = '';
+
+    switch (platform) {
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        break;
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
+        break;
+      default:
+        return;
+    }
+
+    window.open(shareUrl, '_blank');
+  };
+
+  const copyLink = (project: { id?: number; title?: string; description?: string; tags?: string[]; href: any; image?: string; }) => {
+    const url = `${window.location.origin}${project.href}`;
+    navigator.clipboard.writeText(url)
+      .then(() => {
+        toast.success('Project link has been copied to clipboard.');
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
+        toast.error('Failed to copy link. Please try again.');
+      });
+  };
 
   return (
-    <section className="mt-24 min-h-screen py-20 max-w-5xl mx-auto">
+    <section className="min-h-screen py-20 bg-gray-100">
       <div className="container mx-auto px-6">
-        
-        <div className="flex flex-col items-center gap-6 mb-8">
-          <div className="relative w-full max-w-md">
+        <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">My Projects</h2>
+
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+          <div className="relative w-full md:w-auto md:flex-1 max-w-md">
             <Input
               type="text"
               placeholder="Search projects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 z-0"
+              className="pl-10"
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           </div>
-          
-          <div className="flex flex-wrap justify-center gap-2">
+
+          <div className="flex flex-wrap gap-2 w-full md:w-auto md:flex-[2]">
             {allTags.map(tag => (
-                <Badge
+              <Badge
                 key={tag}
-                variant={selectedTags.includes(tag) ? "default" : "outline"}
-                className="text-[16px] cursor-pointer h-10 px-4 font-light"
-                onClick={() => toggleTag(tag)}
-                >
+                variant={selectedTag === tag ? 'default' : 'outline'}
+                className="cursor-pointer"
+                onClick={() => setSelectedTag(tag)}
+              >
                 {tag}
-                </Badge>
+              </Badge>
             ))}
           </div>
         </div>
@@ -92,36 +132,57 @@ const Projects = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white shadow-lg overflow-hidden"
+                className="bg-white rounded-lg shadow-lg overflow-hidden"
               >
-                <Link href={project.href} className="block h-full">
+                <Link href={project.href} className="block">
                   <div className="relative h-48 w-full">
                     <Image 
-                      src={project.image}
-                      alt={project.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="relative z-0"
+                      src={project.image} 
+                      alt={project.title} 
+                      layout="fill" 
+                      objectFit="cover" 
                     />
                   </div>
-                  <div className="p-6">
-                    <p className="text-sm text-gray-500 mb-2">{project.description}</p>
-                    <h3 className="text-xl font-light mb-4 text-gray-800">{project.title}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map(tag => (
-                        <Badge key={tag} variant="secondary">{tag}</Badge>
-                      ))}
-                    </div>
-                  </div>
                 </Link>
+                <div className="px-6 py-4">
+                  <h3 className="text-lg font-bold">{project.title}</h3>
+                  <p className="text-gray-600 text-sm">{project.description}</p>
+                </div>
+                <div className="px-6 pb-4 flex justify-end items-center">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" size="icon">
+                        <MoreVertical className="h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuItem onClick={() => shareProject(project, 'facebook')}>
+                        <Facebook className="mr-2 h-4 w-4" />
+                        <span>Share on Facebook</span>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => shareProject(project, 'twitter')}>
+                        <Twitter className="mr-2 h-4 w-4" />
+                        <span>Share on Twitter</span>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => shareProject(project, 'linkedin')}>
+                        <Linkedin className="mr-2 h-4 w-4" />
+                        <span>Share on LinkedIn</span>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => copyLink(project)}>
+                        <LinkIcon className="mr-2 h-4 w-4" />
+                        <span>Copy Link</span>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
       </div>
+      <Toaster />
     </section>
-  )
-}
+  );
+};
 
-export default Projects
-
+export default Projects;
