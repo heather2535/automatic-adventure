@@ -1,12 +1,16 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import * as React from "react"
-import { usePathname } from 'next/navigation'
+import Link from "next/link";
+import * as React from "react";
+import { usePathname } from "next/navigation";
 
+const routes = [
+  { name: "Projects", href: "/projects" },
+  { name: "About", href: "/about" },
+];
 
 export function Header() {
-  const pathname = usePathname()
+  const pathname = usePathname();
   return (
     <nav className="fixed w-full top-0 z-10">
       <div className="w-full bg-[#B9D49E] py-10">
@@ -15,18 +19,17 @@ export function Header() {
         </h1>
       </div>
       <div className="flex justify-center gap-6 py-1 bg-[#F7F9F9] border-b border-gray-300">
-        <Link 
-          href="/about"
-          className={`px-1 py-1 font-[150] tracking-tight ${pathname === '/about' ? 'bg-[#F1F0EA]' : ''}`}
-        >
-          About
-        </Link>
-        <Link 
-          href="/projects"
-          className={`px-1 py-1 font-[150] tracking-tight ${pathname === '/projects' ? 'bg-[#F1F0EA]' : ''}`}
-        >
-          Projects
-        </Link>
+        {routes.map((route) => (
+          <Link
+            key={route.href}
+            href={route.href}
+            className={`px-1 py-1 font-[150] tracking-tight ${
+              pathname === route.href ? "bg-[#F1F0EA]" : ""
+            }`}
+          >
+            {route.name}
+          </Link>
+        ))}
         <style jsx>{`
           a:hover {
             color: gray;
@@ -34,5 +37,5 @@ export function Header() {
         `}</style>
       </div>
     </nav>
-  )
+  );
 }
