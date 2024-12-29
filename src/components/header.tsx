@@ -5,8 +5,8 @@ import * as React from "react";
 import { usePathname } from "next/navigation";
 
 const routes = [
-  { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
+  { name: "Projects", href: "/projects" },
 ];
 
 export function Header() {

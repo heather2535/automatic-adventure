@@ -89,11 +89,24 @@ const Projects = () => {
   };
 
   return (
-    <section className="min-h-screen py-20 bg-gray-100">
+    <section className="min-h-screen py-20 max-w-5xl mt-4 mx-auto">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">My Projects</h2>
 
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+          <div className="flex flex-wrap gap-2 w-full md:w-auto md:flex-[2]">
+            {allTags.map(tag => (
+              <Badge
+          key={tag}
+          variant={selectedTag === tag ? 'default' : 'outline'}
+          className="cursor-pointer height-[51px] px-4 font-light text-[16px] border border-white"
+          onClick={() => setSelectedTag(tag)}
+              >
+          {tag}
+              </Badge>
+            ))}
+          </div>
+
           <div className="relative w-full md:w-auto md:flex-1 max-w-md">
             <Input
               type="text"
@@ -104,19 +117,6 @@ const Projects = () => {
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           </div>
-
-          <div className="flex flex-wrap gap-2 w-full md:w-auto md:flex-[2]">
-            {allTags.map(tag => (
-              <Badge
-                key={tag}
-                variant={selectedTag === tag ? 'default' : 'outline'}
-                className="cursor-pointer"
-                onClick={() => setSelectedTag(tag)}
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
         </div>
 
         <motion.div 
@@ -126,26 +126,26 @@ const Projects = () => {
           <AnimatePresence>
             {filteredProjects.map(project => (
               <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
+          key={project.id}
+          layout
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-0 shadow-lg overflow-hidden"
               >
-                <Link href={project.href} className="block">
-                  <div className="relative h-48 w-full">
-                    <Image 
-                      src={project.image} 
-                      alt={project.title} 
-                      layout="fill" 
-                      objectFit="cover" 
-                    />
-                  </div>
+          <Link href={project.href} className="block">
+            <div className="relative h-48 w-full">
+              <Image 
+                src={project.image} 
+                alt={project.title} 
+                layout="fill" 
+                objectFit="cover" 
+              />
+            </div>
                 </Link>
                 <div className="px-6 py-4">
-                  <h3 className="text-lg font-bold">{project.title}</h3>
+                  <h3 className="text-lg font-normal">{project.title}</h3>
                   <p className="text-gray-600 text-sm">{project.description}</p>
                 </div>
                 <div className="px-6 pb-4 flex justify-end items-center">

@@ -149,14 +149,6 @@ export default function WebDevelopmentPage() {
           <p className="font-[20px] font-light">In conclusion, this project was able to use natural language processing to categorize thousands of names of climate projects into 11 categories of climate funding. After adding a column for these categories in the dataset then implementing machine learning models of random forest and gradient boosting, a predictive model was created to predict the amount of funding that would be approved for any given climate project. The final model recognizes certain climate funds that require higher amounts of funding, the approved year of the project, project duration, and economic sector. </p>
           <p className="font-[20px] font-light">This project has possibilities for extension. Further parameter tuning of both the natural language processor which categorizes projects as well as the final regressor would result in a higher final accuracy. Additionally, it would be beneficial to implement more regression models like ridge regression, lasso regression, k-nearest neighbors, and decision tree. Experimenting with these would allow us to compare accuracies of the different models since they perform differently depending on the characteristics of the training data, then tune parameters and choose the model with the highest accuracy.</p>
 
-          <p className="font-[20px] font-light mb-2 mt-12">
-          Thanks for reading, check out the&nbsp;  
-          <Link href="https://github.com/bellad21992/Predicting_Climate_Investments" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">GitHub repository</span>
-          </Link> 
-          &nbsp;for this project and watch the final presentation video!
-        </p>
-
         </div>
       </div>
     </section>
