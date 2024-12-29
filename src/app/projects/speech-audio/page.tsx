@@ -144,7 +144,7 @@ const Projects = () => {
         <div className="relative w-full">       
             <Image
               className="w-full h-auto rounded-lg shadow-lg"
-              src="/image1_1.webp"
+              src="/speech-audio/image1_1.webp"
               width="400"
               height="300"
               alt="image"
@@ -155,7 +155,7 @@ const Projects = () => {
           <div className="relative w-full mt-12">       
             <Image
               className="w-xl h-auto rounded-lg shadow-lg mx-auto"
-              src="/image1_2.webp"
+              src="/speech-audio/image1_2.webp"
               width="400"
               height="300"
               alt="image"
@@ -167,7 +167,7 @@ const Projects = () => {
             <div className="relative w-full">       
               <Image
                 className="w-full h-auto rounded-lg shadow-lg"
-                src="/image1_4.webp"
+                src="/speech-audio/image1_4.webp"
                 width="400"
                 height="300"
                 alt="image"
@@ -176,7 +176,7 @@ const Projects = () => {
             <div className="relative w-full">       
               <Image
                 className="w-full h-auto rounded-lg shadow-lg"
-                src="/image1_5.webp"
+                src="/speech-audio/image1_5.webp"
                 width="400"
                 height="300"
                 alt="image"
@@ -187,8 +187,8 @@ const Projects = () => {
       <p className="font-[20px] font-light mb-2 mt-12"> Next, to observe and visualize the effect of the planned data augmentations of adding noise to the audio clips, stretching the audio clips, and increasing the pitch of the audio clips, the waveplots for each of these augmentations are shown below. Random noise is added by computing a noise amplitude that is a fraction of the maximum amplitude of the sound clip, then multiplying this noise amplitude by a randomly generated number between 0 and 1, before the result is added to the data. Time stretching stretches the audio clips using a rate parameter set to a default value of 0.8, meaning the audio is stretched to 80% of its original duration while preserving the pitch. Lastly, the pitch is shifted up by 7 semitones using the n_steps parameter.  </p>
         <div className="relative w-full">       
           <Image
-            className="w-full h-auto rounded-lg shadow-lg"
-            src="/image1_6.png"
+            className="w-full h-auto shadow-lg"
+            src="/speech-audio/image1_6.png"
             width="400"
             height="300"
             alt="image"
@@ -198,7 +198,7 @@ const Projects = () => {
       <div className="relative w-full">       
           <Image
             className="w-full h-auto rounded-lg shadow-lg"
-            src="/image1_3.webp"
+            src="/speech-audio/image1_3.webp"
             width="400"
             height="300"
             alt="image"
@@ -211,7 +211,7 @@ const Projects = () => {
             <div className="relative w-full">       
               <Image
                 className="w-full h-auto rounded-lg shadow-lg"
-                src="/image1_7.png"
+                src="/speech-audio/image1_7.png"
                 width="400"
                 height="300"
                 alt="image"
@@ -220,7 +220,7 @@ const Projects = () => {
             <div className="relative w-full">       
               <Image
                 className="w-full h-auto rounded-lg shadow-lg"
-                src="/image1_8.webp"
+                src="/speech-audio/image1_8.webp"
                 width="400"
                 height="300"
                 alt="image"
@@ -230,7 +230,7 @@ const Projects = () => {
             <div className="relative w-full">       
               <Image
                 className="w-full h-auto rounded-lg shadow-lg"
-                src="/image1_9.png"
+                src="/speech-audio/image1_9.png"
                 width="400"
                 height="300"
                 alt="image"
