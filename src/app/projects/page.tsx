@@ -18,7 +18,7 @@ import { toast, Toaster } from 'react-hot-toast';
 
 
 const projects = [
-  { id: 1, title: 'Speech Audio Emotion Recognition', description: 'April 28, 2024', tags: ['Featured Projects', 'Machine Learning', 'NLP'], href: "/projects/speech-audio", image: '/image1.jpg' },
+  { id: 1, title: 'Speech Audio Emotion Recognition', description: 'April 28, 2024', tags: ['Featured Projects', 'Machine Learning', 'NLP'], href: "/projects/speech-audio", image: '/speech-audio/image1.jpg' },
   { id: 2, title: 'City of Boston Budget Reallocation Analysis', description: 'April 22, 2024', tags: ['Data Visualization', 'Statistical Analysis'], href: "/projects/city-of-boston", image: '/image2.jpg' },
   { id: 3, title: 'Small Business Association Loan Prediction', description: 'April 22, 2024', tags: ['Featured Projects', 'Machine Learning'], href: "/projects/small-business", image: '/image3.webp' },
   { id: 4, title: 'Flight Satisfaction Prediction', description: 'December 6, 2023', tags: ['Featured Projects', 'Machine Learning'], href: "/projects/flight-satisfaction", image: '/image4.webp' },
