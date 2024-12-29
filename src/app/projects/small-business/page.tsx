@@ -231,19 +231,7 @@ export default function WebDevelopmentPage() {
           <p className="font-[20px] font-light">Some limitations of this project include imbalanced, skewed data, and possible outliers. As there are fewer observations with longer terms and larger disbursements, the model may be less accurate when predicting larger loans. Additionally, more test cases could be implemented to further understand the behavior and rules of the tree. </p>
           <p className="font-[20px] font-light">To improve upon our models, decision tree pruning could be implemented to achieve a simpler, more robust model. Additionally, further parameters could be tested when running a grid search to achieve a more optimal set of parameters. Lastly, neural networks could be implemented to achieve higher accuracy, but would result in a loss of interpretability. </p>
 
-          <p className="font-[20px] font-light mb-2 mt-12">
-          Thanks for reading, check out the&nbsp;  
-          <Link href="https://github.com/bellad21992/Small_Business_Loan_Prediction" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">GitHub repository</span>
-          </Link> 
-          &nbsp;for this project and view the&nbsp; 
-          <Link href="https://docs.google.com/presentation/d/1hAR4jrsW3_bTnEBxWqJSiHR4q-b5tsRKU54wiN1u6QI/edit#slide=id.g2768ca7ef44_0_65" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">presentation</span>
-          </Link> slides, and final&nbsp; 
-          <Link href="https://docs.google.com/document/d/1m51lB7ik-PEWAEG4e-lMpdF3PqBl12erPm653aHjTMM/edit" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">report</span>
-          </Link>!
-        </p>
+ 
 
         </div>
       </div>
