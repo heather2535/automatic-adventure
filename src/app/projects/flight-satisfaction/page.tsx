@@ -191,16 +191,6 @@ export default function WebDevelopmentPage() {
           <p className="font-[20px] font-light">In conclusion, this project fit several different machine learning models to the training data of passenger satisfaction data. Models that were fit to the data include linear, lasso, ridge, and elastic net regressions, single decision tree, random forest, boosting, and neural network. The best performing model was a random forest, which indicates that there is no need for more complicated models for this dataset.</p>
           <p className="font-[20px] font-light">While the best performing model&apos;s MSE of 0.86 is pretty low, there are some limitations to this project and dataset that affected the performance. The most important feature of recommended airline may be a confounding variable with passenger satisfaction ratings. Furthermore, there may be additional unaccounted factors such as connecting flights which may influence passenger satisfaction. Additionally, selection bias in satisfaction survey data may only include reviews from customers who had below-average travel experiences. </p>
           <p className="font-[20px] font-light">This project has several possible extensions to improve upon the model for business use. Further parameter tuning and optimization can increase MSE scores further, as well as exploring additional models and ensemble methods. Additionally, attempting different model architectures with the neural network could result in an improvement upon the best identified model of random forest regression. </p>
-          <p className="font-[20px] font-light mb-2 mt-12">
-          Thanks for reading, check out the&nbsp;  
-          <Link href="https://github.com/bellad21992/Predicting_Airline_Satisfaction" passHref>
-            <span className="text-black underline" rel="noopener noreferrer">GitHub repository</span>
-          </Link> 
-          &nbsp;for this project and view the&nbsp; 
-          <Link href="https://docs.google.com/presentation/d/1Y1VGqqmmomfhQKzsTGiMyPWeFfVWlxXY/edit#slide=id.p8" passHref>
-            <span className="text-black underline" rel="noopener noreferrer">presentation</span>
-          </Link>!
-        </p>
 
         </div>
       </div>

@@ -363,20 +363,7 @@ const Projects = () => {
         <p className="font-[20px] font-light mb-2 mt-12"> In conclusion, this project provided experience for working with audio data as a new form of multimodal data. The final CRNN model had a 76% validation accuracy but 25% test accuracy. Throughout the process of building this project, there were several learning takeaways, including how to perform data augmentation and its benefits for providing variation in the training data, feature extraction for audio data, creating a convolutional neural network and convolutional recurrent neural network, and varying the model architecture and model parameters to improve overall performance. </p>
         <p className="font-[20px] font-light mb-2 mt-12"> There are a few limitations to this project including several possible reasons for the low test accuracy. Emotions being similar in the way they are expressed results in the model having difficulty distinguishing between similar emotions. Additionally, with some of the test data being self-labeled real-world speech audio data as compared to voice actors with assigned emotions, and real-world complexity of the expression and perception of human emotions complicates the machine learning aspect of emotion recognition.</p>
         <p className="font-[20px] font-light mb-2 mt-12"> There are a few ways in which this project could be further improved. Using more training data would provide more for the model to learn from, as this project has somewhat limited training data with only around 200 audio clips per emotion class. Furthermore, the model could be trained on more varied test data to provide more natural dialogue. Additionally, further data augmentations could be performed on the original data, or additional features could be extracted. One could also experiment with transformer architectures like BERT, including attention mechanisms, and trying ensemble methods to further boost learning.</p>
-        <p className="font-[20px] font-light mb-2 mt-12">
-          Thanks for reading, check out the&nbsp;  
-          <Link href="https://github.com/bellad21992/Speech_Audio_Emotion_Recognition" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">GitHub repository</span>
-          </Link> 
-          &nbsp;for this project and view the&nbsp; 
-          <Link href="https://docs.google.com/presentation/d/1_zSP8rTPtXIdagrl2a42P6VwL9FeMfvX2EU9_Qc9ysM/edit#slide=id.p" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">presentation slides</span>
-          </Link> 
-          &nbsp;and&nbsp; 
-          <Link href="https://docs.google.com/document/d/1h1fB31dgSWOPAqHFDpBeD7ITChUotHp8B46T4T6HJXo/edit" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">final report</span>
-          </Link>!
-        </p>
+ 
 
 
 
