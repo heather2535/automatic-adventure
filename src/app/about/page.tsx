@@ -9,9 +9,9 @@ export default function WebDevelopmentPage() {
         <div className="relative w-full">       
           <Image
             className="w-80 mt-12 h-auto rounded-full shadow-lg mx-auto"
-            src="/about.avif"
+            src="/about_2.avif"
             width="400"
-            height="300"
+            height="400"
             alt="image"
           />
         </div>
