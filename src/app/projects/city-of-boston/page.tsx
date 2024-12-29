@@ -148,13 +148,13 @@ export default function WebDevelopmentPage() {
           <p className="font-[20px] font-light">There are a few ways to extend upon this project. One would be to obtain data for a further break down of program expense categories, including personnel services, contractual services, supplies and materials, current charges and obligations, and equipment. Additionally, obtaining overtime pay details for past years would provide a more comprehensive view of how overtime has been spent in recent years. Lastly, including recently released 2023 data can provide more recent insights into department budgets. </p>
           <p className="font-[20px] font-light mb-2 mt-12">
           Thanks for reading, check out the&nbsp;  
-<Link href="https://github.com/bellad21992/City_Budget_Analysis" passHref>
-        <a className="text-black underline" target="_blank" rel="noopener noreferrer">GitHub repository</a>
-      </Link> 
-      &nbsp;for this project and view the&nbsp; 
-      <Link href="https://docs.google.com/presentation/d/1TPI7JSvMZHgIeZVqLq-2HSucp4QYlyel/edit" passHref>
-        <a>presentation</a>
-      </Link>
+          <Link href="https://github.com/bellad21992/Predicting_Airline_Satisfaction" passHref>
+            <span className="text-black underline" target="_blank" rel="noopener noreferrer">GitHub repository</span>
+          </Link> 
+          &nbsp;for this project and view the&nbsp; 
+          <Link href="https://docs.google.com/presentation/d/1Y1VGqqmmomfhQKzsTGiMyPWeFfVWlxXY/edit#slide=id.p8" passHref>
+            <span className="text-black underline" target="_blank" rel="noopener noreferrer">presentation</span>
+          </Link>!
 
         </p>
 
