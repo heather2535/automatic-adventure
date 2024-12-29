@@ -194,11 +194,11 @@ export default function WebDevelopmentPage() {
           <p className="font-[20px] font-light mb-2 mt-12">
           Thanks for reading, check out the&nbsp;  
           <Link href="https://github.com/bellad21992/Predicting_Airline_Satisfaction" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">GitHub repository</span>
+            <span className="text-black underline" rel="noopener noreferrer">GitHub repository</span>
           </Link> 
           &nbsp;for this project and view the&nbsp; 
           <Link href="https://docs.google.com/presentation/d/1Y1VGqqmmomfhQKzsTGiMyPWeFfVWlxXY/edit#slide=id.p8" passHref>
-            <span className="text-black underline" target="_blank" rel="noopener noreferrer">presentation</span>
+            <span className="text-black underline" rel="noopener noreferrer">presentation</span>
           </Link>!
         </p>
 
