@@ -71,10 +71,10 @@ export default function WebDevelopmentPage() {
 
         <div className="relative w-full flex justify-center mt-8">
           <Image
-            className="w-auto h-auto rounded-lg shadow-lg"
+            className="w-auto h-auto rounded-full shadow-lg"
             src="/about_2.avif"
             width="400"
-            height="300"
+            height="400"
             alt="Hobbies"
           />
         </div>

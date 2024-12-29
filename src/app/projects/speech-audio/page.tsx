@@ -99,7 +99,7 @@ const Projects = () => {
           <div className="relative w-full">       
             <Image
               className="w-full h-auto rounded-[0px] shadow-lg"
-              src="/image1.jpg"
+              src="//speech-audio/image1.jpg"
               width="400"
               height="300"
               alt="image"
